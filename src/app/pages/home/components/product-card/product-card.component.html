@@ -1,6 +1,6 @@
 <section class="container">
   @if (product.image) {
-<img [src]="product.image" alt="imagem do produto"  class="product-image" >
+<img [src]="product.image" alt="imagem do produto"  class="product-image" (click)="selectProduct()">
   }
   <div class="product-info">
     <div class="infos">

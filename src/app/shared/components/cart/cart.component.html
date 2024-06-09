@@ -1,0 +1,12 @@
+<main>
+  <header>
+    <button mat-icon-button (click)="closeCart()">
+      <mat-icon class="material-icons-outlined md-24">close</mat-icon>
+    </button>
+  </header>
+  <div class="products">
+    @for (product of cartItems; track product.id) {
+      <app-small-product-card [product]="product"></app-small-product-card>
+    }
+  </div>
+</main>

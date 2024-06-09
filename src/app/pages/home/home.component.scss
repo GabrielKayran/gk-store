@@ -2,6 +2,9 @@
   margin: 2.5rem 8.5rem 0 8.5rem;
 }
 
+.mat-container{
+  background-color: var(--gray-1);
+}
 
 .products-container{
   display: flex;
@@ -9,17 +12,27 @@
   align-items: center;
 }
 
+.details{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
 .products{
+  overflow-x: scroll;
+  transition: 2ms;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
   padding: 2rem;
   display: flex;
   justify-content: space-between;
-  overflow-x: auto;
-  scroll-behavior: smooth;
   width: calc(100% - 80px);
-}
-
-.products::-webkit-scrollbar {
-  display: none;
 }
 
 .arrow {

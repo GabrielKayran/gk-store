@@ -2,18 +2,30 @@
   <div class="header">
 <app-header></app-header>
   </div>
-  <div class="products-container" >
-    <button mat-icon-button color="accent" class="arrow left" (click)="scrollLeft()">
-      <mat-icon class="material-icons-outlined md-24">arrow_back_ios</mat-icon>
-    </button>
-    <div class="products">
-      @for (product of products; track product.id){
-        <app-product-card [product]="product"></app-product-card>
+  <mat-drawer-container class="mat-container" [hasBackdrop]="true">
+    <mat-drawer #drawer mode="side" [opened]="stateCartService.cartIsOpen()" position="end" disableClose="true">
+      <app-cart></app-cart>
+    </mat-drawer>
+    <mat-drawer-content>
+      @if (!selectedProductStateService.detailsOpen()){
+        <div class="products-container">
+          <button mat-icon-button color="accent" class="arrow left" (click)="scrollLeft()">
+            <mat-icon class="material-icons-outlined md-24">arrow_back_ios</mat-icon>
+          </button>
+          @defer (when products.length > 0;) {
+            <div class="products">
+              @for (product of products; track product.id){
+                <app-product-card [product]="product" ></app-product-card>
+              }
+            </div>
+          }
+          <button mat-icon-button color="accent" class="arrow right" (click)="scrollRight()">
+            <mat-icon class="material-icons-outlined md-24" color="white">arrow_forward_ios</mat-icon>
+          </button>
+        </div>
+      } @else {
+        <app-product-details></app-product-details>
       }
-    </div>
-    <button mat-icon-button color="accent" class="arrow right" (click)="scrollRight()">
-      <mat-icon class="material-icons-outlined md-24" color="white">arrow_forward_ios</mat-icon>
-    </button>
-  </div>
-
+    </mat-drawer-content>
+  </mat-drawer-container>
 </main>

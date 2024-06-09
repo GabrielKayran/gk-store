@@ -3,7 +3,7 @@
     <img ngSrc="assets/gk-logo.png" class="logo" alt="logo" height="600" width="600">
   </div>
   <div class="shopping">
-  <button mat-mini-fab color="gray"> <mat-icon class="material-icons-outlined md-24">shopping_bag</mat-icon> </button>
-    <span class="cart-count">{{ productsCount() }}</span>
+  <button mat-mini-fab color="gray" (click)="openCart()"> <mat-icon class="material-icons-outlined md-24">shopping_bag</mat-icon> </button>
+    <span class="cart-count">{{ cartService.productsCount() }}</span>
   </div>
 </header>

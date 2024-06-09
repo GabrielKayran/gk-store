@@ -2,7 +2,7 @@ import {Component, signal, Signal} from '@angular/core';
 import {MatIcon} from "@angular/material/icon";
 import { MatMiniFabButton} from "@angular/material/button";
 import {NgOptimizedImage} from "@angular/common";
-import {CartService} from "../../../services/cart.service";
+import {StateCartService} from "../../../services/state-cart.service";
 
 @Component({
   selector: 'app-header',
@@ -12,9 +12,13 @@ import {CartService} from "../../../services/cart.service";
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-  protected productsCount: Signal<number> = signal(0);
+  protected productsCount: Signal<number>;
 
-  constructor(private cartService: CartService) {
-    this.productsCount = this.cartService.getProductsCount();
+  constructor(protected cartService: StateCartService) {
+    this.productsCount = this.cartService.productsCount;
+  }
+
+  public openCart(): void {
+    this.cartService.cartIsOpen.set(true);
   }
 }

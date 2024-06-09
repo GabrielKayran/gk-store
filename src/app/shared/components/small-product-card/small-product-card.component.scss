@@ -1,0 +1,42 @@
+main {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .product{
+    width: 24rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+
+  img{
+    width: 6.25rem;
+    margin-right: 1.25rem;
+    border-radius: 10px;
+  }
+
+  h1{
+    font-size: 1.5rem;
+    color: var(--gray-4);
+  }
+
+  p{
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gray-5);
+  }
+
+  button{
+    color: var(--primary);
+    span{
+      font-weight: 700;
+    }
+  }
+}
+
+
+.product-info{
+  width: 100%;
+}

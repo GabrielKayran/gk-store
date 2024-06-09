@@ -1,0 +1,14 @@
+main{
+  background-color: var(--gray-2);
+  width: 30rem;
+
+  header{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    button{
+      color: var(--gray-4);
+    }
+  }
+}

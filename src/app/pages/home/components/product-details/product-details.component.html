@@ -1,0 +1,26 @@
+<section class="details-container">
+  <div class="details">
+    <img [src]="selectedProduct.image" alt="imagem do produto" class="product-image">
+  <div class="product-info">
+  <div class="infos">
+    <div class="infos-header">
+    <h1>{{ selectedProduct.title }}</h1>
+    <button mat-icon-button (click)="closeDetails()" color="accent">
+      <mat-icon class="material-icons-outlined md-24">close</mat-icon>
+    </button>
+    </div>
+    <p class="price">{{ selectedProduct.price | currency }}</p>
+    <div class="product-description">
+      <p>{{ selectedProduct.description }}</p>
+    </div>
+  </div>
+    <button mat-raised-button (click)="addToCart()" color="accent">
+      @if (!isInCart) {
+        Colocar na Sacola
+      } @else {
+        Remover da Sacola
+      }
+    </button>
+  </div>
+  </div>
+</section>
