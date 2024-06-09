@@ -1,0 +1,28 @@
+.header{
+  margin: 2.5rem 8.5rem 0 8.5rem;
+}
+
+
+.products-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.products{
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  width: calc(100% - 80px);
+}
+
+.products::-webkit-scrollbar {
+  display: none;
+}
+
+.arrow {
+  z-index: 99999;
+}
+

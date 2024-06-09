@@ -1,7 +1,19 @@
+<main>
+  <div class="header">
 <app-header></app-header>
-
-@for (item of products; track item.id) {
-  <div class="col-md-4">
-    {{item.title}} - {{item.price}}
   </div>
-}
+  <div class="products-container" >
+    <button mat-icon-button color="accent" class="arrow left" (click)="scrollLeft()">
+      <mat-icon class="material-icons-outlined md-24">arrow_back_ios</mat-icon>
+    </button>
+    <div class="products">
+      @for (product of products; track product.id){
+        <app-product-card [product]="product"></app-product-card>
+      }
+    </div>
+    <button mat-icon-button color="accent" class="arrow right" (click)="scrollRight()">
+      <mat-icon class="material-icons-outlined md-24" color="white">arrow_forward_ios</mat-icon>
+    </button>
+  </div>
+
+</main>

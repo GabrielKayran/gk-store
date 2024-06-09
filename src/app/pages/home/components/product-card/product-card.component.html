@@ -1,1 +1,18 @@
-<p>product-card works!</p>
+<section class="container">
+  @if (product.image) {
+<img [src]="product.image" alt="imagem do produto"  class="product-image" >
+  }
+  <div class="product-info">
+    <div class="infos">
+    <h1>{{ product.title }}</h1>
+    <p>{{ product.price | currency }}</p>
+    </div>
+    <button mat-mini-fab (click)="addToCart()">
+      @if (isInCart){
+        <mat-icon class="material-icons-outlined md-24">remove_shopping_cart</mat-icon>
+      } @else {
+        <mat-icon class="material-icons-outlined md-24">shopping_bag</mat-icon>
+      }
+    </button>
+  </div>
+</section>

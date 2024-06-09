@@ -1,6 +1,9 @@
 <header>
   <div class="logo-container">
-    <img src="assets/gk-logo.png" class="logo" alt="logo">
+    <img ngSrc="assets/gk-logo.png" class="logo" alt="logo" height="600" width="600">
   </div>
-  <button mat-fab> <mat-icon class="material-icons-outlined md-24">shopping_bag</mat-icon> </button>
+  <div class="shopping">
+  <button mat-mini-fab color="gray"> <mat-icon class="material-icons-outlined md-24">shopping_bag</mat-icon> </button>
+    <span class="cart-count">{{ productsCount() }}</span>
+  </div>
 </header>
