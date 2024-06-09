@@ -1,11 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {ProductsService} from "../../services/products.service";
 import {Product} from "../../shared/models/product";
+import {HeaderComponent} from "../../shared/components/header/header.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [HeaderComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
