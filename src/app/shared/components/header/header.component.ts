@@ -1,4 +1,4 @@
-import {Component, signal, Signal} from '@angular/core';
+import {Component, Signal} from '@angular/core';
 import {MatIcon} from "@angular/material/icon";
 import { MatMiniFabButton} from "@angular/material/button";
 import {NgOptimizedImage} from "@angular/common";
