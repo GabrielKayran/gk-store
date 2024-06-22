@@ -5,8 +5,27 @@
     </button>
   </header>
   <div class="products">
+    <h1>
+      Sacola de Compras
+    </h1>
     @for (product of cartItems; track product.id) {
       <app-small-product-card [product]="product"></app-small-product-card>
     }
   </div>
+
+  <footer>
+    <div class="infos">
+    <div class="quantity">
+      <span>Quantidade</span>
+      <span>{{ cartItems.length }} items</span>
+    </div>
+    <div class="total">
+      <span>Valor total</span>
+      <span>{{ total | currency : 'BRL' }}</span>
+    </div>
+    </div>
+    <button mat-flat-button [disabled]="!cartItems.length" (click)="redirectToPurchase()">
+      Finalizar Compra
+    </button>
+  </footer>
 </main>

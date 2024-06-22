@@ -1,4 +1,4 @@
-import {Component, computed, Input, OnInit, Output, Signal} from '@angular/core';
+import {Component, Input, Output} from '@angular/core';
 import {CurrencyPipe, NgOptimizedImage} from "@angular/common";
 import {Product} from "../../../../shared/models/product";
 import {MatIcon} from "@angular/material/icon";
@@ -20,26 +20,20 @@ import {SelectedProductStateService} from "../../../../services/selected-product
   templateUrl: './product-card.component.html',
   styleUrl: './product-card.component.scss'
 })
-export class ProductCardComponent implements OnInit{
+export class ProductCardComponent{
   @Input() public product: Product = {} as Product;
   @Output() public selectedProduct: Product = {} as Product;
-  protected isInCart= false;
 
 
-  constructor(private cartService: StateCartService, private selectedProductStateService: SelectedProductStateService) {
+  constructor(protected cartService: StateCartService, private selectedProductStateService: SelectedProductStateService) {
 
-  }
-  ngOnInit() {
-    this.isInCart = this.cartService.isInCart(this.product.id);
   }
 
   public addToCart(): void {
-    if (!this.isInCart) {
+    if (!this.cartService.isInCart(this.product.id)) {
       this.cartService.addProduct(this.product);
-      this.isInCart = true;
     } else {
       this.cartService.removeProduct(this.product.id);
-      this.isInCart = false;
     }
   }
 

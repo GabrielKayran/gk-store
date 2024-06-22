@@ -1,0 +1,46 @@
+main{
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  align-items: center;
+  padding: 1rem;
+  header{
+    display: flex;
+    align-items: center;
+    margin-bottom: 6.5rem;
+    .logo{
+      width: 3.5rem;
+      height: 3.5rem;
+      color: var(--primary);
+    }
+  }
+
+
+  .products{
+    height: calc(100% - 460px);
+    display: flex;
+    align-items: center;
+  img{
+    margin-left: -40px;
+    border-radius: 50%;
+    width: 140px;
+    height: 140px;
+  }
+  }
+
+  h1{
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--white);
+  }
+  span{
+    font-size: 1.5rem;
+    color: var(--gray-4);
+  }
+
+  button{
+    margin-top: 4rem;
+    background-color: var(--gray-1);
+    color: var(--primary);
+  }
+}

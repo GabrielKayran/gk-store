@@ -1,0 +1,26 @@
+<main>
+  <header>
+    <img ngSrc="assets/gk-logo.png" class="logo" alt="logo" height="600" width="600">
+  </header>
+  @if(cartProducts.length > 0){
+  <div class="products">
+    @for (product of cartProducts; track product.id){
+      <img [src]="product.image" alt="image of product">
+    }
+  </div>
+  <h1>
+    Compra Efetuada
+  </h1>
+  <span>
+    Uhuul, sua compra de {{productsCount}} camisetas já está a caminho da sua casa.
+  </span>
+  }
+  @else{
+  <h1>
+    Carrinho Vazio
+  </h1>
+  }
+  <button mat-flat-button (click)="returnToHome()">
+    Voltar ao catálogo
+  </button>
+</main>

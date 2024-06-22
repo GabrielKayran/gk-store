@@ -1,4 +1,4 @@
-.header{
+header{
   margin: 2.5rem 8.5rem 0 8.5rem;
 }
 
@@ -11,6 +11,14 @@
   justify-content: space-between;
   align-items: center;
 }
+:host ::ng-deep .mat-drawer-backdrop.mat-drawer-shown{
+  background-color: transparent;
+}
+
+mat-drawer-content{
+  overflow: hidden;
+}
+
 
 .details{
   display: flex;

@@ -10,7 +10,8 @@ export class StateCartService {
   private cartProductsKey = 'cartProducts';
   public cartProducts = signal<Array<CartProduct>>([]);
   public productsCount = computed(() => this.cartProducts().length);
-  private total = signal(0);
+
+  public total = signal(0);
   public cartIsOpen = signal(false);
   private readonly isBrowser: boolean;
 

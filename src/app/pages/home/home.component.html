@@ -1,8 +1,8 @@
 <main>
-  <div class="header">
+  <header>
 <app-header></app-header>
-  </div>
-  <mat-drawer-container class="mat-container" [hasBackdrop]="true">
+  </header>
+  <mat-drawer-container class="mat-container" [hasBackdrop]="false">
     <mat-drawer #drawer mode="side" [opened]="stateCartService.cartIsOpen()" position="end" disableClose="true">
       <app-cart></app-cart>
     </mat-drawer>
